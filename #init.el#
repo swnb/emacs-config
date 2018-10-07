@@ -17,9 +17,15 @@
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 
-(global-company-mode 1)
 
-(setq-default)
+(global-company-mode 1)
+;auto complete
+
+(setq-default cursor-type 'bar)
+;make cursor point type sigel bar
+
+(setq make-backup-files nil)
+;rm backup file : for example ./init.el~
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
