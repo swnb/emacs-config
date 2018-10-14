@@ -1,0 +1,21 @@
+
+;; ----- smex-history -----
+(
+ open-init-file
+ info
+ nodejs-repl-send-buffer
+ nodejs-repl
+ customize
+ 5x5
+ cd
+)
+
+;; ----- smex-data -----
+(
+ (5x5 . 1)
+ (customize . 1)
+ (nodejs-repl-send-buffer . 9)
+ (nodejs-repl . 2)
+ (open-init-file . 2)
+ (info . 4)
+)
