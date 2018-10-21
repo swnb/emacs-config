@@ -13,20 +13,20 @@
 ;; add package by func under
 (defvar swnb/packages '(
 			company
+			;; themes
+			material-theme
 			helm-themes
 			hungry-delete
 			smex
+			;; auto complete
 			swiper
 			counsel
 			smartparens
+			;; nodejs env config plugin
 			js2-mode
 			nodejs-repl
 			exec-path-from-shell
 			) "Default packages")
-
-;; use shell with emacs with mac
-(when (memq window-system '(mac ns x))
-  (exec-path-from-shell-initialize))
 
 ;; set var for package list
 (setq package-selected-packages swnb/packages)
@@ -43,6 +43,10 @@
     (when (not (package-installed-p pkg))
       (package-install pkg))))
 
+;; use shell with emacs with mac
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+
 ;; set theme
 (require 'helm-themes)
 
@@ -51,7 +55,7 @@
 
 ;; smartparens config
 (require 'smartparens-config)
-(smartparens-global-mode)
+(smartparens-global-mode t)
 
 ;; hungry-delete
 (require 'hungry-delete)
@@ -74,7 +78,7 @@
 (global-set-key (kbd "<f1> f") 'counsel-describe-function)
 (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
 
-;; set helm theme with solarized-dark
+;;helm theme with solarized-dark
 (helm-themes--load-theme "solarized-dark")
 
 (tool-bar-mode -1)
@@ -91,13 +95,12 @@
   (find-file "~/.emacs.d/init.el"))
 
 ;; auto complete
-(global-company-mode 1)
+(global-company-mode t)
 
 ;; make cursor point type sigel bar
 (setq-default cursor-type 'bar)
 
 ;; rm backup file : for example ./init.el~l
-
 (setq make-backup-files nil)
 
 ;; fontify
@@ -122,7 +125,10 @@
 (delete-selection-mode t)
 
 ;; band file mode by file name
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(setq auto-mode-alist
+      (append
+       '(("\\.js\\'" . js2-mode))
+       auto-mode-alist))
 
 ;; fullscreen when start
 (setq initial-frame-alist (quote ((fullscreen .  maximized))))
@@ -130,7 +136,11 @@
 ;; paren-mode
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 
+;; org-mode
+(setq org-agenda-files '("~/org"))
+(global-set-key (kbd "C-c a") 'org-agenda)
 
+;; custom config set 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -139,7 +149,7 @@
  '(company-idle-delay 0.05)
  '(custom-safe-themes
    (quote
-    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default))))
+    ("a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

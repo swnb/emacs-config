@@ -1,21 +1,25 @@
 
 ;; ----- smex-history -----
 (
- open-init-file
+ load-theme
+ helm-themes
  info
  nodejs-repl-send-buffer
+ 5x5
  nodejs-repl
  customize
- 5x5
- cd
 )
 
 ;; ----- smex-data -----
 (
- (5x5 . 1)
+ (5x5 . 2)
  (customize . 1)
- (nodejs-repl-send-buffer . 9)
- (nodejs-repl . 2)
- (open-init-file . 2)
- (info . 4)
+ (nodejs-repl-send-buffer . 16)
+ (nodejs-repl . 3)
+ (open-init-file . 12)
+ (info . 5)
+ (5x5-eol . 1)
+ (5x5-randomize . 1)
+ (helm-themes . 2)
+ (load-theme . 1)
 )
