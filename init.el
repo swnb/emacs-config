@@ -13,6 +13,8 @@
 ;; add package by func under
 (defvar swnb/packages '(
 			company
+			rainbow-delimiters
+			popwin
 			;; themes
 			material-theme
 			helm-themes
@@ -66,6 +68,15 @@
 (smex-initialize) ;; no need if you don't use package.el
 ;; (global-set-key (kbd "M-x") 'smex)
 
+(abbrev-mode t)
+(define-abbrev-table 'global-abbrev-table '(
+					    ("8cz" "const fn = ()=>{}")
+					    ))
+
+;; popwin
+(require 'popwin)
+(popwin-mode t)
+
 ;; auto complete for repl
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
@@ -78,8 +89,12 @@
 (global-set-key (kbd "<f1> f") 'counsel-describe-function)
 (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
 
-;;helm theme with solarized-dark
-(helm-themes--load-theme "solarized-dark")
+;; helm theme with solarized-dark
+;; (helm-themes--load-theme "solarized-dark")
+(load-theme 'material t)
+
+;; color paren
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 (tool-bar-mode -1)
 
