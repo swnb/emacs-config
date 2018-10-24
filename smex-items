@@ -1,25 +1,27 @@
 
 ;; ----- smex-history -----
 (
- open-init-file
+ haskell-mode
  load-theme
+ helm-resume
+ 5x5
  helm-themes
  info
  nodejs-repl-send-buffer
- 5x5
- nodejs-repl
 )
 
 ;; ----- smex-data -----
 (
- (5x5 . 2)
+ (5x5 . 3)
  (customize . 1)
  (nodejs-repl-send-buffer . 16)
  (nodejs-repl . 3)
- (open-init-file . 18)
+ (open-init-file . 19)
  (info . 5)
  (5x5-eol . 1)
  (5x5-randomize . 1)
  (helm-themes . 2)
- (load-theme . 2)
+ (load-theme . 5)
+ (helm-resume . 1)
+ (haskell-mode . 1)
 )
