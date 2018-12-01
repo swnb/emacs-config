@@ -8,8 +8,8 @@
   (package-initialize)
   (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
   )
-(require 'cl)
 
+(require 'cl)
 ;; add package by func under
 (defvar swnb/packages '(
 			company
@@ -30,6 +30,8 @@
 			exec-path-from-shell
 			;; haskell mode
 			haskell-mode
+			;; common-lisp
+			slime
 			) "Default packages")
 
 ;; set var for package list
@@ -50,6 +52,13 @@
 ;; use shell with emacs with mac
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
+
+;; auto revert
+(global-auto-revert-mode t)
+
+;; common-lisp
+(setq inferior-lisp-program "/usr/local/bin/sbcl")
+(setq slime-contribs '(slime-fancy))
 
 ;; set theme
 (require 'helm-themes)
@@ -119,6 +128,7 @@
 
 ;; rm backup file : for example ./init.el~l
 (setq make-backup-files nil)
+(setq auto-save-default nil)
 
 ;; fontify
 (require 'org)

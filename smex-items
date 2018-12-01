@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ slime
+ slime-mode
  haskell-mode
  load-theme
  helm-resume
  5x5
  helm-themes
- info
- nodejs-repl-send-buffer
 )
 
 ;; ----- smex-data -----
@@ -24,4 +24,6 @@
  (load-theme . 5)
  (helm-resume . 1)
  (haskell-mode . 1)
+ (slime-mode . 12)
+ (slime . 7)
 )
