@@ -1,11 +1,14 @@
+
+;; init package emacs lisp
+
 (require 'cl)
+
 (when (>= emacs-major-version 25)
   (require 'package)
   (package-initialize)
   (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
   )
 
-(require 'cl)
 ;; add package by func under
 (defvar swnb/packages '(
 			company
@@ -48,3 +51,45 @@
 ;; use shell with emacs with mac
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
+
+;; global-mode
+
+;; auto complete for repl
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+
+;; hungry-delete-mode
+(global-hungry-delete-mode)
+
+;; auto complete
+(global-company-mode t)
+
+;; popwin
+(require 'popwin)
+(popwin-mode t)
+
+;; common-lisp
+(setq inferior-lisp-program "/usr/local/bin/sbcl")
+(setq slime-contribs '(slime-fancy))
+
+;; set theme
+(require 'helm-themes)
+
+;; nodejs repl
+(require 'nodejs-repl)
+
+;; smartparens config
+(require 'smartparens-config)
+(smartparens-global-mode t)
+
+;; config for smex
+(require 'smex)
+(smex-initialize) ;; no need if you don't use package.el
+;; (global-set-key (kbd "M-x") 'smex)
+
+;; recentf mode c-x c-r
+(require 'recentf)
+(recentf-mode t)
+
+(provide 'init-packages)
+
