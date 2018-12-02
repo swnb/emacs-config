@@ -13,4 +13,7 @@
 (require 'init-keybind)
 (require 'init-org)
 
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(setq custom-file (expand-file-name "init-lisp/custom.el" user-emacs-directory))
+
+(load-file custom-file)
+
