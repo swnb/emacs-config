@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ open-init-file
+ indent-region
+ byte-compile-file
  slime
+ make-directory
  slime-mode
  haskell-mode
- load-theme
- helm-resume
- 5x5
- helm-themes
 )
 
 ;; ----- smex-data -----
@@ -16,7 +16,7 @@
  (customize . 1)
  (nodejs-repl-send-buffer . 16)
  (nodejs-repl . 3)
- (open-init-file . 19)
+ (open-init-file . 20)
  (info . 5)
  (5x5-eol . 1)
  (5x5-randomize . 1)
@@ -25,5 +25,8 @@
  (helm-resume . 1)
  (haskell-mode . 1)
  (slime-mode . 12)
- (slime . 7)
+ (slime . 8)
+ (make-directory . 1)
+ (byte-compile-file . 3)
+ (indent-region . 1)
 )

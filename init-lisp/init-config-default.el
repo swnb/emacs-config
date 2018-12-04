@@ -29,5 +29,17 @@
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 
+
+(defun my-indent
+    (interactive)
+  (save-excursion)
+  (if (region-active-p)
+      (progn
+	(indent-region (region-beginning) (region-end))
+	(message "indent select section"))
+    (progn
+      (indent-region (point-min) (point-max))
+      (message "indent buffer"))))
+
 (provide 'init-config-default)
 
