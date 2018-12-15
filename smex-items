@@ -1,8 +1,8 @@
 
 ;; ----- smex-history -----
 (
- open-init-file
  indent-region
+ hippie-expand
  byte-compile-file
  slime
  make-directory
@@ -28,5 +28,6 @@
  (slime . 8)
  (make-directory . 1)
  (byte-compile-file . 3)
- (indent-region . 1)
+ (indent-region . 2)
+ (hippie-expand . 2)
 )
