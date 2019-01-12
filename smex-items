@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ racket-mode-start-faster
  indent-region
  hippie-expand
  byte-compile-file
  slime
  make-directory
  slime-mode
- haskell-mode
 )
 
 ;; ----- smex-data -----
@@ -30,4 +30,5 @@
  (byte-compile-file . 3)
  (indent-region . 2)
  (hippie-expand . 2)
+ (racket-mode-start-faster . 1)
 )

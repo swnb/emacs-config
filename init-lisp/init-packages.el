@@ -31,6 +31,8 @@
 			haskell-mode
 			;; common-lisp
 			slime
+			;; racket
+			racket-mode
 			) "Default packages")
 
 ;; set var for package list
@@ -92,4 +94,7 @@
 (recentf-mode t)
 
 (provide 'init-packages)
+
+(add-hook 'racket-mode-hook      #'racket-unicode-input-method-enable)
+(add-hook 'racket-repl-mode-hook #'racket-unicode-input-method-enable)
 
